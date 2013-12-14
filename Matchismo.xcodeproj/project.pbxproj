@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F31444AD185C766C00D0C9FC /* PlayingCardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F31444AC185C766C00D0C9FC /* PlayingCardViewController.m */; };
 		F39623E9185A5BED002C8400 /* CardMatchingGame.m in Sources */ = {isa = PBXBuildFile; fileRef = F39623E8185A5BED002C8400 /* CardMatchingGame.m */; };
 		F3A60216185A08B900A9793C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F3A60215185A08B900A9793C /* Foundation.framework */; };
 		F3A60218185A08B900A9793C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F3A60217185A08B900A9793C /* CoreGraphics.framework */; };
@@ -39,6 +40,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F31444AB185C766C00D0C9FC /* PlayingCardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayingCardViewController.h; sourceTree = "<group>"; };
+		F31444AC185C766C00D0C9FC /* PlayingCardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayingCardViewController.m; sourceTree = "<group>"; };
 		F39623E7185A5BED002C8400 /* CardMatchingGame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardMatchingGame.h; sourceTree = "<group>"; };
 		F39623E8185A5BED002C8400 /* CardMatchingGame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardMatchingGame.m; sourceTree = "<group>"; };
 		F3A60212185A08B900A9793C /* Matchismo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Matchismo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -130,6 +133,8 @@
 				F3A60227185A08B900A9793C /* Main.storyboard */,
 				F3A6022A185A08B900A9793C /* CardGameViewController.h */,
 				F3A6022B185A08B900A9793C /* CardGameViewController.m */,
+				F31444AB185C766C00D0C9FC /* PlayingCardViewController.h */,
+				F31444AC185C766C00D0C9FC /* PlayingCardViewController.m */,
 				F3E7C4C5185A24E70095CAAD /* Model */,
 				F3A6022D185A08B900A9793C /* Images.xcassets */,
 				F3A6021C185A08B900A9793C /* Supporting Files */,
@@ -285,6 +290,7 @@
 			files = (
 				F3E7C4CB185A2C590095CAAD /* PlayingCard.m in Sources */,
 				F3E7C4C8185A29610095CAAD /* Deck.m in Sources */,
+				F31444AD185C766C00D0C9FC /* PlayingCardViewController.m in Sources */,
 				F3A60226185A08B900A9793C /* CardGameAppDelegate.m in Sources */,
 				F3A6022C185A08B900A9793C /* CardGameViewController.m in Sources */,
 				F39623E9185A5BED002C8400 /* CardMatchingGame.m in Sources */,
