@@ -49,7 +49,7 @@
 - (IBAction)touchCardButton:(UIButton *)sender
 {
      [self.segmentContol setEnabled:NO];
-    int chosenButtonIndex = [self.cardButtons indexOfObject:sender];
+    NSUInteger chosenButtonIndex = [self.cardButtons indexOfObject:sender];
     [self.game chooseCardAtIndex:chosenButtonIndex];
     [self updateUI];
     self.flipCount++;
@@ -60,12 +60,12 @@
 {
     
     for (UIButton *cardButton in self.cardButtons) {
-        int cardButtonIndex = [self.cardButtons indexOfObject:cardButton];
+        NSUInteger cardButtonIndex = [self.cardButtons indexOfObject:cardButton];
         Card *card = [self.game cardAtIndex:cardButtonIndex];
         [cardButton setTitle:[self titleForCard:card] forState:UIControlStateNormal];
         [cardButton setBackgroundImage:[self backgroundImageForCard:card] forState:UIControlStateNormal];
         cardButton.enabled = !card.isMatched;
-        self.scoreLabel.text = [NSString stringWithFormat:@"Score: %d", self.game.score];
+        self.scoreLabel.text = [NSString stringWithFormat:@"Score: %ld", (long)self.game.score];
     }
     
     if (self.game) {
@@ -78,10 +78,10 @@
             description = [cardContents componentsJoinedByString:@" "];
         }
         if (self.game.lastScore > 0) {
-            description = [NSString stringWithFormat:@"Matched %@ for %d points.", description, self.game.lastScore];
+            description = [NSString stringWithFormat:@"Matched %@ for %ld points.", description, (long)self.game.lastScore];
         } else if (self.game.lastScore < 0) {
             
-            description = [NSString stringWithFormat:@"%@ don’t match! %d point penalty!", description, -self.game.lastScore];
+            description = [NSString stringWithFormat:@"%@ don’t match! %ld point penalty!", description, -self.game.lastScore];
         }
         self.flipDesciption.text = description;
     }
