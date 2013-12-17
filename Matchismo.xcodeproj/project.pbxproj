@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F30FA1C3186085CC00646240 /* SetsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F30FA1C2186085CC00646240 /* SetsViewController.m */; };
 		F31444AD185C766C00D0C9FC /* PlayingCardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F31444AC185C766C00D0C9FC /* PlayingCardViewController.m */; };
 		F39623E9185A5BED002C8400 /* CardMatchingGame.m in Sources */ = {isa = PBXBuildFile; fileRef = F39623E8185A5BED002C8400 /* CardMatchingGame.m */; };
 		F3A60216185A08B900A9793C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F3A60215185A08B900A9793C /* Foundation.framework */; };
@@ -40,6 +41,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F30FA1C1186085CC00646240 /* SetsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetsViewController.h; sourceTree = "<group>"; };
+		F30FA1C2186085CC00646240 /* SetsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetsViewController.m; sourceTree = "<group>"; };
 		F31444AB185C766C00D0C9FC /* PlayingCardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayingCardViewController.h; sourceTree = "<group>"; };
 		F31444AC185C766C00D0C9FC /* PlayingCardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayingCardViewController.m; sourceTree = "<group>"; };
 		F39623E7185A5BED002C8400 /* CardMatchingGame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardMatchingGame.h; sourceTree = "<group>"; };
@@ -131,10 +134,12 @@
 			isa = PBXGroup;
 			children = (
 				F3A60227185A08B900A9793C /* Main.storyboard */,
-				F3A6022A185A08B900A9793C /* CardGameViewController.h */,
-				F3A6022B185A08B900A9793C /* CardGameViewController.m */,
 				F31444AB185C766C00D0C9FC /* PlayingCardViewController.h */,
 				F31444AC185C766C00D0C9FC /* PlayingCardViewController.m */,
+				F3A6022A185A08B900A9793C /* CardGameViewController.h */,
+				F3A6022B185A08B900A9793C /* CardGameViewController.m */,
+				F30FA1C1186085CC00646240 /* SetsViewController.h */,
+				F30FA1C2186085CC00646240 /* SetsViewController.m */,
 				F3E7C4C5185A24E70095CAAD /* Model */,
 				F3A6022D185A08B900A9793C /* Images.xcassets */,
 				F3A6021C185A08B900A9793C /* Supporting Files */,
@@ -297,6 +302,7 @@
 				F3E7C4CE185A30770095CAAD /* PlayingCardDeck.m in Sources */,
 				F3A60222185A08B900A9793C /* main.m in Sources */,
 				F3E7C4C3185A24920095CAAD /* Card.m in Sources */,
+				F30FA1C3186085CC00646240 /* SetsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

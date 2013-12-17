@@ -81,7 +81,7 @@
             description = [NSString stringWithFormat:@"Matched %@ for %ld points.", description, (long)self.game.lastScore];
         } else if (self.game.lastScore < 0) {
             
-            description = [NSString stringWithFormat:@"%@ don’t match! %ld point penalty!", description, -self.game.lastScore];
+            description = [NSString stringWithFormat:@"%@ don’t match! %i point penalty!", description, -self.game.lastScore];
         }
         self.flipDesciption.text = description;
     }
@@ -92,7 +92,8 @@
 
     return card.isChosen ? card.contents : @"";
     
-    //  YOU SHOULD IMPLEMENT THIS METHOD!
+    // Make text color for card RED if heards or diamonds apper
+    // You can add this little improvement a little later.
     //    if ([string rangeOfString:@"♥️" options:NSCaseInsensitiveSearch].location != NSNotFound ||
     //       [string nrangeOfString:@"♦️" options:NSCaseInsensitiveSearch].location != NSNotFound)
     //        [sender setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
