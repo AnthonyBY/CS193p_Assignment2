@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Deck.h"
 
 @interface SetsViewController : UIViewController
+//ptorected for subclass
+-(Deck *) createDeck; //abstact cluss
 
 @end
