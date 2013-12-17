@@ -19,11 +19,34 @@
 
 - (IBAction)segmentControl:(UISegmentedControl *)sender;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *segmentContol;
-@property (weak, nonatomic) IBOutlet UILabel *flipDesciption;
+@property (weak, nonatomic) IBOutlet UILabel *flipDescription;
 
+@property (strong, nonatomic) NSMutableArray *flipHistory;
+
+@property (weak, nonatomic) IBOutlet UISlider *historySlider;
 @end
 
 @implementation CardGameViewController
+
+- (NSMutableArray *)flipHistory
+{
+    if (!_flipHistory) {
+        _flipHistory = [NSMutableArray array];
+    }
+    return _flipHistory;
+}
+
+- (IBAction)changeSlider:(id)sender {
+    int sliderValue;
+    sliderValue = lroundf(self.historySlider.value);
+    [self.historySlider setValue:sliderValue animated:NO];
+    if ([self.flipHistory count]) {
+        self.flipDescription.alpha =
+        (sliderValue + 1 < [self.flipHistory count]) ? 0.6 : 1.0;
+        self.flipDescription.text =
+        [self.flipHistory objectAtIndex:sliderValue];
+    }
+}
 
 - (IBAction)redealPressed:(UIButton *)sender {
     self.scoreLabel.text = @"Score reseted";
@@ -31,6 +54,7 @@
     _game = [[CardMatchingGame alloc] initWithCardCount:[self.cardButtons count] usingDeck:[self createDeck]];
     [self updateUI];
     [self.segmentContol setEnabled:YES];
+    self.flipHistory = nil;
 }
 
 - (CardMatchingGame *) game
@@ -68,6 +92,7 @@
         self.scoreLabel.text = [NSString stringWithFormat:@"Score: %ld", (long)self.game.score];
     }
     
+    
     if (self.game) {
         NSString *description = @"";
         if ([self.game.lastChosenCards count]) {
@@ -76,6 +101,14 @@
                 [cardContents addObject:card.contents];
             }
             description = [cardContents componentsJoinedByString:@" "];
+            self.flipDescription.text = description;
+            self.flipDescription.alpha = 1;
+            
+            if (![description isEqualToString:@""]
+                && ![[self.flipHistory lastObject] isEqualToString:description]) {
+                [self.flipHistory addObject:description];
+                [self setSliderRange];
+            }
         }
         if (self.game.lastScore > 0) {
             description = [NSString stringWithFormat:@"Matched %@ for %ld points.", description, (long)self.game.lastScore];
@@ -83,9 +116,17 @@
             
             description = [NSString stringWithFormat:@"%@ don’t match! %i point penalty!", description, -self.game.lastScore];
         }
-        self.flipDesciption.text = description;
+        self.flipDescription.text = description;
     }
 }
+
+- (void)setSliderRange
+{
+    int maxValue = [self.flipHistory count] - 1;
+    self.historySlider.maximumValue = maxValue;
+    [self.historySlider setValue:maxValue animated:YES];
+}
+
 
 - (NSString *) titleForCard: (Card *) card
 {

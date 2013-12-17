@@ -503,18 +503,26 @@
                                 </connections>
                             </segmentedControl>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Status label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DDd-pt-oyP">
-                                <rect key="frame" x="20" y="433" width="280" height="25"/>
+                                <rect key="frame" x="20" y="444" width="280" height="25"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="crA-kD-LcL">
+                                <rect key="frame" x="18" y="403" width="284" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="changeSlider:" destination="vXZ-lx-hvc" eventType="valueChanged" id="oat-Wf-bs6"/>
+                                </connections>
+                            </slider>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.50196081399917603" blue="0.25098040699958801" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <tabBarItem key="tabBarItem" tag="1" title="CardMatching" image="button" id="cJe-Ib-9De"/>
                     <navigationItem key="navigationItem" id="GjU-dC-1YJ"/>
                     <connections>
-                        <outlet property="flipDesciption" destination="DDd-pt-oyP" id="fHc-RI-Mth"/>
+                        <outlet property="flipDescription" destination="DDd-pt-oyP" id="eKy-OR-TwS"/>
+                        <outlet property="historySlider" destination="crA-kD-LcL" id="Wlp-x4-jMh"/>
                         <outlet property="scoreLabel" destination="7MX-JZ-FAf" id="GZS-ZA-Jgo"/>
                         <outlet property="segmentContol" destination="DBg-fX-qCO" id="aLS-Bf-hj4"/>
                         <outletCollection property="cardButtons" destination="Rcg-Nw-KTP" id="Qap-LA-JR4"/>
